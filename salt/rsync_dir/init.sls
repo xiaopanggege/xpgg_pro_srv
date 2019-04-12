@@ -16,6 +16,7 @@ rsync_dir:
     {% endif %}
     - exclude_pat: E@(\.svn($|/))|(\.git($|/))
     - show_changes: False
+    - keep_source: False
 {% elif pillar['sync_file_method']=='rsync' %}
 {% if not salt.file.directory_exists(pillar['mkdir_path']) %}
 mkdir_name_path:
